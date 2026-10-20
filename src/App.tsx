@@ -187,6 +187,7 @@ export default function App() {
   const [conflict, setConflict] = useState(false);
   const [githubToken, setGithubToken] = useState("");
   const [availableGists, setAvailableGists] = useState<GistOption[]>([]);
+  const [pendingGistId, setPendingGistId] = useState("");
   const [installAvailable, setInstallAvailable] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
   const installPrompt = useRef<InstallPromptEvent | null>(null);
@@ -1024,14 +1025,21 @@ export default function App() {
                     )}
                   </div>
                   <div className="destination">
-                    <span className="eyebrow">BACKUP DESTINATION</span>
-                    <strong>
-                      {connection.gistId ? "Secret GitHub Gist" : "New secret gist"}
+                    <span className="eyebrow">CURRENTLY SELECTED GIST</span>
+                    <strong className="destination-name">
+                      {connection.gistId
+                        ? availableGists.find((gist) => gist.id === connection.gistId)?.description || "Secret GitHub Gist"
+                        : "New secret gist"}
                     </strong>
+                    {connection.gistId && (
+                      <span className="destination-file">
+                        {availableGists.find((gist) => gist.id === connection.gistId)?.filename || "Selected backup destination"}
+                      </span>
+                    )}
                     <small>
                       {connection.gistUrl ? (
                         <a href={connection.gistUrl} target="_blank" rel="noreferrer">
-                          Open or share gist <ArrowUpRight size={12} />
+                          {connection.gistUrl} <ArrowUpRight size={12} />
                         </a>
                       ) : (
                         "Created on your first upload"
@@ -1042,18 +1050,9 @@ export default function App() {
                         <label>
                           Choose a secret gist
                           <select
-                            value={connection.gistId}
+                            value={pendingGistId || connection.gistId}
                             disabled={busy || availableGists.length === 0}
-                            onChange={(e) => {
-                              const id = e.target.value;
-                              if (!id) return;
-                              void run(async () => {
-                                const selected = await selectGist(id);
-                                updateConnection({ ...selected, url: connection.url });
-                                setConflict(false);
-                                setMessage("Gist selected as this journal’s backup destination.");
-                              });
-                            }}
+                            onChange={(e) => setPendingGistId(e.target.value)}
                           >
                             <option value="">{availableGists.length ? "Select a gist…" : "No secret gists found"}</option>
                             {availableGists.map((gist) => (
@@ -1063,6 +1062,21 @@ export default function App() {
                             ))}
                           </select>
                         </label>
+                        <button
+                          className="button secondary confirm-gist"
+                          disabled={busy || offline || !pendingGistId || pendingGistId === connection.gistId}
+                          onClick={() =>
+                            void run(async () => {
+                              const selected = await selectGist(pendingGistId);
+                              updateConnection({ ...selected, url: connection.url });
+                              setPendingGistId("");
+                              setConflict(false);
+                              setMessage("Gist selected as this journal’s backup destination.");
+                            })
+                          }
+                        >
+                          <Check size={16} /> Confirm gist selection
+                        </button>
                         <button
                           className="text-button"
                           disabled={busy || offline}
@@ -1077,6 +1091,7 @@ export default function App() {
                         disabled={busy}
                         className="text-button"
                         onClick={() => {
+                          setPendingGistId("");
                           updateConnection({
                             ...connection,
                             gistId: "",

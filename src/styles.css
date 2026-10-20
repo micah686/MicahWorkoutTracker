@@ -1386,23 +1386,42 @@ main#main-content {
   gap: 16px;
 }
 .destination {
-  padding: 19px;
-  background: #f5f7ef;
-  border: 1px solid var(--border);
+  padding: 20px;
+  background: #edf3e5;
+  border: 1px solid #cbd8bd;
+  border-left: 5px solid var(--green);
   border-radius: 7px;
   margin: 23px 0;
 }
-.destination strong {
+.destination .destination-name {
   display: block;
-  font-size: 13px;
-  margin-top: 9px;
+  font-size: 17px;
+  line-height: 1.35;
+  margin-top: 8px;
+  color: var(--dark);
+  overflow-wrap: anywhere;
+}
+.destination-file {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
 }
 .destination small {
   display: block;
-  font-size: 10px;
-  color: #9ba68b;
-  margin: 5px 0;
+  font-size: 11px;
+  color: #64765d;
+  margin: 9px 0 4px;
   overflow-wrap: anywhere;
+}
+.destination small a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.confirm-gist {
+  width: 100%;
+  margin-top: 12px;
 }
 .destination .text-button {
   font-size: 9px;
