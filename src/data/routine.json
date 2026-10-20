@@ -1,0 +1,1528 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "workbook-template",
+  "revisionId": "seed-v1",
+  "parentRevisionId": null,
+  "exportedAt": "2026-10-19T00:00:00.000Z",
+  "exercises": [
+    {
+      "id": "barbell-back-squat",
+      "name": "Barbell Back Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=orFfbKqvxIs",
+      "animation": "squat"
+    },
+    {
+      "id": "front-squat",
+      "name": "Front Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=uYumuL_G_V0",
+      "animation": null
+    },
+    {
+      "id": "bulgarian-split-squat",
+      "name": "Bulgarian Split Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=rah3eJCPXHA",
+      "animation": "split-squat"
+    },
+    {
+      "id": "goblet-squat",
+      "name": "Goblet Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=gm4ln6PO4rc",
+      "animation": null
+    },
+    {
+      "id": "hack-squat",
+      "name": "Hack Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=fuB13raVabg",
+      "animation": null
+    },
+    {
+      "id": "leg-press",
+      "name": "Leg Press",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=n1MQcwTN7YQ",
+      "animation": "leg-press"
+    },
+    {
+      "id": "box-squat",
+      "name": "Box Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=WGjf5w8iaTM",
+      "animation": null
+    },
+    {
+      "id": "walking-lunge",
+      "name": "Walking Lunge",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=kRzcRkKy1ns",
+      "animation": "lunge"
+    },
+    {
+      "id": "zercher-squat",
+      "name": "Zercher Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=_fXBhqQWj64",
+      "animation": null
+    },
+    {
+      "id": "pistol-squat",
+      "name": "Pistol Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=Huy0Le3k_Ak",
+      "animation": null
+    },
+    {
+      "id": "dumbbell-step-up",
+      "name": "Dumbbell Step-Up",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=hgkk12L_Umk",
+      "animation": null
+    },
+    {
+      "id": "sumo-squat",
+      "name": "Sumo Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=kjlfpqXnyL8",
+      "animation": null
+    },
+    {
+      "id": "cossack-squat",
+      "name": "Cossack Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=gfod3jiMgl4",
+      "animation": "cossack"
+    },
+    {
+      "id": "sissy-squat",
+      "name": "Sissy Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=r7ezSWy69Hc",
+      "animation": null
+    },
+    {
+      "id": "belt-squat",
+      "name": "Belt Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=YgYwEo5WN5o",
+      "animation": null
+    },
+    {
+      "id": "overhead-squat",
+      "name": "Overhead Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=Vz-nVoyiIqI",
+      "animation": null
+    },
+    {
+      "id": "landmine-squat",
+      "name": "Landmine Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=T7KH0i2y7_8",
+      "animation": null
+    },
+    {
+      "id": "reverse-lunge",
+      "name": "Reverse Lunge",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=-Nr6dqEvz3Q",
+      "animation": null
+    },
+    {
+      "id": "barbell-elv-heel-squat",
+      "name": "Barbell Elv. Heel Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=3NFgwO10IEA",
+      "animation": null
+    },
+    {
+      "id": "hack-squat-split-stance",
+      "name": "Hack Squat-Split Stance",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=xt8XMFCm9pw",
+      "animation": null
+    },
+    {
+      "id": "barbell-high-bar-squats",
+      "name": "Barbell High-Bar Squats",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=dW5-C1fsMjk",
+      "animation": null
+    },
+    {
+      "id": "barbell-bulgarian-split-squat",
+      "name": "Barbell Bulgarian Split Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=7_kI9wSskjI",
+      "animation": null
+    },
+    {
+      "id": "barbell-reverse-lunges",
+      "name": "Barbell Reverse Lunges",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=sb1GbA4Dp04",
+      "animation": null
+    },
+    {
+      "id": "db-front-squat",
+      "name": "DB Front Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=MJao9o7ROs0",
+      "animation": null
+    },
+    {
+      "id": "db-goblet-side-lunge",
+      "name": "DB Goblet Side Lunge",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=IsjTYbYBXyc",
+      "animation": null
+    },
+    {
+      "id": "db-bulgarian-split-squats",
+      "name": "DB Bulgarian Split Squats",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=4Qnfw1FqWxQ",
+      "animation": null
+    },
+    {
+      "id": "db-elv-heel-goblet-squat",
+      "name": "DB Elv. Heel Goblet Squat",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=GPzRf3sfpbU",
+      "animation": null
+    },
+    {
+      "id": "db-curtsy-lunge",
+      "name": "DB Curtsy Lunge",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=F46-n5xGXPE",
+      "animation": null
+    },
+    {
+      "id": "quad-extensions",
+      "name": "Quad Extensions",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=4zOky6-n78I",
+      "animation": "leg-extension"
+    },
+    {
+      "id": "single-leg-quad-extensions",
+      "name": "Single Leg Quad Extensions",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=82IuSLk5zNc",
+      "animation": null
+    },
+    {
+      "id": "trap-bar-squats",
+      "name": "Trap Bar Squats",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=18FHtGKma30",
+      "animation": null
+    },
+    {
+      "id": "db-split-squats",
+      "name": "DB Split Squats",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=byph0Th9muQ",
+      "animation": null
+    },
+    {
+      "id": "barbell-split-squats",
+      "name": "Barbell Split Squats",
+      "category": "Squat",
+      "demoUrl": "https://www.youtube.com/watch?v=8Elq99nHIHU",
+      "animation": null
+    },
+    {
+      "id": "conventional-deadlift",
+      "name": "Conventional Deadlift",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=XxWcirHIwVo",
+      "animation": "deadlift"
+    },
+    {
+      "id": "romanian-deadlift-rdl",
+      "name": "Romanian Deadlift (RDL)",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=amLSSb8cXok",
+      "animation": "rdl"
+    },
+    {
+      "id": "barbell-hip-thrust",
+      "name": "Barbell Hip Thrust",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=pF17m_CXfL0",
+      "animation": null
+    },
+    {
+      "id": "dumbbell-romanian-deadlift",
+      "name": "Dumbbell Romanian Deadlift",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/shorts/wiekN4aIJ0g",
+      "animation": null
+    },
+    {
+      "id": "kettlebell-swing",
+      "name": "Kettlebell Swing",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=bDCeXbMJVNs",
+      "animation": null
+    },
+    {
+      "id": "trap-bar-deadlift",
+      "name": "Trap Bar Deadlift",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=Vu4oXIRzx7w",
+      "animation": null
+    },
+    {
+      "id": "good-morning",
+      "name": "Good Morning",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=vKPGe8zb2S4",
+      "animation": null
+    },
+    {
+      "id": "single-leg-rdl",
+      "name": "Single-Leg RDL",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=Zfr6wizR8rs",
+      "animation": null
+    },
+    {
+      "id": "sumo-deadlift",
+      "name": "Sumo Deadlift",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=LGIS9vs65Sk",
+      "animation": null
+    },
+    {
+      "id": "stiff-leg-deadlift-sldl",
+      "name": "Stiff-Leg Deadlift (SLDL)",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=2fHE6zxftYw",
+      "animation": null
+    },
+    {
+      "id": "cable-pull-through",
+      "name": "Cable Pull-Through",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=yXopOhzEoeo",
+      "animation": null
+    },
+    {
+      "id": "single-leg-hip-thrust",
+      "name": "Single-Leg Hip Thrust",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=SEdqd1n0cvg",
+      "animation": null
+    },
+    {
+      "id": "barbell-clean",
+      "name": "Barbell Clean",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=1nvAUJVmFZY",
+      "animation": null
+    },
+    {
+      "id": "back-extension-hyperextension",
+      "name": "Back Extension (Hyperextension)",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=xMyFXMZ6Ch0",
+      "animation": "back-extension"
+    },
+    {
+      "id": "glute-ham-raise-ghr",
+      "name": "Glute Ham Raise (GHR)",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=6XB6f8yk9cU",
+      "animation": null
+    },
+    {
+      "id": "snatch-grip-deadlift",
+      "name": "Snatch-Grip Deadlift",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=BWPuQ4bFMh8",
+      "animation": null
+    },
+    {
+      "id": "deficit-deadlift",
+      "name": "Deficit Deadlift",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/shorts/76HPha5pDn8",
+      "animation": null
+    },
+    {
+      "id": "dumbbell-single-leg-deadlift",
+      "name": "Dumbbell Single-Leg Deadlift",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=YHPhOAmVWq4",
+      "animation": null
+    },
+    {
+      "id": "seated-leg-curl",
+      "name": "Seated Leg Curl",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=qy2mIFQMHHc",
+      "animation": "leg-curl"
+    },
+    {
+      "id": "prone-leg-curl",
+      "name": "Prone Leg Curl",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=QjNFk4F5dAs",
+      "animation": null
+    },
+    {
+      "id": "nordic-curls",
+      "name": "Nordic Curls",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=_e9vFU9-tkc",
+      "animation": null
+    },
+    {
+      "id": "machine-hip-thrust",
+      "name": "Machine Hip Thrust",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=6W-ViLupxKE",
+      "animation": "hip-thrust"
+    },
+    {
+      "id": "hamstring-walk-outs",
+      "name": "Hamstring Walk Outs",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=0DbMzDAQFOU",
+      "animation": null
+    },
+    {
+      "id": "barbell-staggered-stance-rdl",
+      "name": "Barbell- Staggered stance RDL",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=3hJrIGQ_AE0",
+      "animation": null
+    },
+    {
+      "id": "db-staggered-rdl",
+      "name": "DB- Staggered RDL",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=TeHaGvH9Cvk",
+      "animation": null
+    },
+    {
+      "id": "kb-rdl",
+      "name": "KB-RDL",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=gnTpAO-FOwU",
+      "animation": null
+    },
+    {
+      "id": "kb-straggered-rdl",
+      "name": "KB-Straggered RDL",
+      "category": "Hinge",
+      "demoUrl": "https://www.youtube.com/watch?v=HwbUb4gcKjE",
+      "animation": null
+    },
+    {
+      "id": "barbell-bench-press",
+      "name": "Barbell Bench Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=rT7DgCr-3pg",
+      "animation": "bench"
+    },
+    {
+      "id": "incline-dumbbell-press",
+      "name": "Incline Dumbbell Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=OC7Qs_SAO2E",
+      "animation": "incline"
+    },
+    {
+      "id": "flat-dumbbell-bench-press",
+      "name": "Flat Dumbbell Bench Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=VDU5bzE2qOE",
+      "animation": null
+    },
+    {
+      "id": "standard-push-up",
+      "name": "Standard Push-Up",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=l02EZAm-qn0",
+      "animation": "pushup"
+    },
+    {
+      "id": "chest-dips",
+      "name": "Chest Dips",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=waZ0-EdqyB0",
+      "animation": "dip"
+    },
+    {
+      "id": "cable-chest-flye",
+      "name": "Cable Chest Flye",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=FGF8MR9dmFs",
+      "animation": null
+    },
+    {
+      "id": "machine-chest-press",
+      "name": "Machine Chest Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=3jYo5cMU3d4",
+      "animation": null
+    },
+    {
+      "id": "close-grip-bench-press",
+      "name": "Close-Grip Bench Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=nEF0bv2FW94",
+      "animation": null
+    },
+    {
+      "id": "incline-barbell-bench-press",
+      "name": "Incline Barbell Bench Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=5kyLUGVq_pk",
+      "animation": null
+    },
+    {
+      "id": "decline-dumbbell-press",
+      "name": "Decline Dumbbell Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=Bx4QPVH-J1g",
+      "animation": null
+    },
+    {
+      "id": "floor-press",
+      "name": "Floor Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=vAFw7EPL4eM",
+      "animation": null
+    },
+    {
+      "id": "deficit-push-up",
+      "name": "Deficit Push-Up",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=PPTj-MW2tcs",
+      "animation": null
+    },
+    {
+      "id": "decline-barbell-bench-press",
+      "name": "Decline Barbell Bench Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=th9v6o__WOI",
+      "animation": null
+    },
+    {
+      "id": "diamond-push-up",
+      "name": "Diamond Push-Up",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=8_ILkbB9an8",
+      "animation": null
+    },
+    {
+      "id": "ring-dip",
+      "name": "Ring Dip",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=EyA7h8zCmkQ",
+      "animation": null
+    },
+    {
+      "id": "incline-cable-flye",
+      "name": "Incline Cable Flye",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=Z-wvp8ZjvHY",
+      "animation": null
+    },
+    {
+      "id": "landmine-chest-press",
+      "name": "Landmine Chest Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=1G-_FTEkoNw",
+      "animation": null
+    },
+    {
+      "id": "machine-incline-chest-press",
+      "name": "Machine Incline Chest Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=xnhqZcF2E2s",
+      "animation": null
+    },
+    {
+      "id": "pec-dec",
+      "name": "Pec Dec",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=3RLqAh8-9Pg",
+      "animation": null
+    },
+    {
+      "id": "assited-dips",
+      "name": "Assited Dips",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=UBHRGNJn_lU",
+      "animation": null
+    },
+    {
+      "id": "db-altenating-press",
+      "name": "DB Altenating Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=bf93PZWLeF8",
+      "animation": null
+    },
+    {
+      "id": "db-chest-fly",
+      "name": "DB Chest Fly",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=98aRvyw-IGg",
+      "animation": null
+    },
+    {
+      "id": "db-incline-chest-fly",
+      "name": "DB Incline Chest Fly",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=U5uW6jaOiLg",
+      "animation": null
+    },
+    {
+      "id": "tricep-dips",
+      "name": "Tricep Dips",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=kXoW6ViMKko",
+      "animation": null
+    },
+    {
+      "id": "cable-tricep-extension",
+      "name": "Cable Tricep Extension",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/shorts/7lYeoKRXO-0",
+      "animation": "triceps"
+    },
+    {
+      "id": "skull-crushers",
+      "name": "Skull Crushers",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=9baX4-wEYx8",
+      "animation": null
+    },
+    {
+      "id": "trx-push-ups",
+      "name": "TRX Push Ups",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=OlUqeytSoxE",
+      "animation": null
+    },
+    {
+      "id": "db-rotating-chest-press",
+      "name": "DB Rotating Chest Press",
+      "category": "Push",
+      "demoUrl": "https://www.youtube.com/watch?v=awEEyL5zGvU",
+      "animation": null
+    },
+    {
+      "id": "barbell-bent-over-row",
+      "name": "Barbell Bent-Over Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=FEFjR70BPt8",
+      "animation": "row"
+    },
+    {
+      "id": "pull-up",
+      "name": "Pull-Up",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=1rRmIzEsl_4",
+      "animation": "pullup"
+    },
+    {
+      "id": "lat-pulldown",
+      "name": "Lat Pulldown",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=NJxKFor4hXc",
+      "animation": "pulldown"
+    },
+    {
+      "id": "seated-cable-row",
+      "name": "Seated Cable Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=iitCIXBgDCE",
+      "animation": "cable-row"
+    },
+    {
+      "id": "single-arm-dumbbell-row",
+      "name": "Single-Arm Dumbbell Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=sP_4vybjVJs",
+      "animation": null
+    },
+    {
+      "id": "chin-up",
+      "name": "Chin-Up",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=T78xCiw_R6g",
+      "animation": null
+    },
+    {
+      "id": "face-pull",
+      "name": "Face Pull",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=ljgqer1ZpXg",
+      "animation": "facepull"
+    },
+    {
+      "id": "chest-supported-t-bar-row",
+      "name": "Chest-Supported T-Bar Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=sP_4vybjVJs",
+      "animation": null
+    },
+    {
+      "id": "pendlay-row",
+      "name": "Pendlay Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=h4nkoayPFWw",
+      "animation": null
+    },
+    {
+      "id": "inverted-row",
+      "name": "Inverted Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=CdtrfXK7bcg",
+      "animation": "inverted-row"
+    },
+    {
+      "id": "meadows-row",
+      "name": "Meadows Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=heabDFBKKRA",
+      "animation": null
+    },
+    {
+      "id": "straight-arm-cable-pulldown",
+      "name": "Straight-Arm Cable Pulldown",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=AjCCGN2tU3Q",
+      "animation": "straight-arm"
+    },
+    {
+      "id": "neutral-grip-pull-up",
+      "name": "Neutral-Grip Pull-Up",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=Y3ntNsIS2Q8",
+      "animation": null
+    },
+    {
+      "id": "dumbbell-pullover",
+      "name": "Dumbbell Pullover",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=brhRXlOhsAM",
+      "animation": null
+    },
+    {
+      "id": "seal-row",
+      "name": "Seal Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=49Hbk_5fhoI",
+      "animation": null
+    },
+    {
+      "id": "wide-grip-lat-pulldown",
+      "name": "Wide-Grip Lat Pulldown",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=iZdoSM8lFsg",
+      "animation": null
+    },
+    {
+      "id": "chest-supported-dumbbell-row",
+      "name": "Chest-Supported Dumbbell Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=c1ooSxRXeGQ",
+      "animation": null
+    },
+    {
+      "id": "high-cable-row",
+      "name": "High Cable Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=OeLb503NZHk",
+      "animation": null
+    },
+    {
+      "id": "assited-chin-ups",
+      "name": "Assited Chin Ups",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=yVxa1-2QnBY",
+      "animation": null
+    },
+    {
+      "id": "assited-pull-ups",
+      "name": "Assited Pull Ups",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=xewBaDLnfBQ",
+      "animation": null
+    },
+    {
+      "id": "single-single-arm-cable-row",
+      "name": "Single Single Arm Cable Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=7BkgqzC6WsM",
+      "animation": null
+    },
+    {
+      "id": "lat-pulldown-close-grip",
+      "name": "Lat Pulldown-close Grip",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=lSt1oTrZ_Cc",
+      "animation": null
+    },
+    {
+      "id": "lat-pulldown-single-arm",
+      "name": "Lat Pulldown-Single Arm",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=NJxKFor4hXc",
+      "animation": null
+    },
+    {
+      "id": "db-reverse-fly",
+      "name": "DB Reverse Fly",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=Weu9HMHdiDA",
+      "animation": null
+    },
+    {
+      "id": "barbell-landmine-row",
+      "name": "Barbell Landmine Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=G-jU1aPVhnY",
+      "animation": null
+    },
+    {
+      "id": "db-bor",
+      "name": "DB BOR",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=rqTOAM8WoeM",
+      "animation": null
+    },
+    {
+      "id": "kb-gorilla-rows",
+      "name": "KB Gorilla Rows",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=x5jwg87PxJQ",
+      "animation": null
+    },
+    {
+      "id": "kb-alternating-gorilla-row",
+      "name": "KB Alternating Gorilla Row",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=QU-5lzZCxQ4",
+      "animation": null
+    },
+    {
+      "id": "machine-lat-pulldown",
+      "name": "Machine Lat Pulldown",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=iZdoSM8lFsg",
+      "animation": null
+    },
+    {
+      "id": "machine-s-a-lat-pulldown",
+      "name": "Machine S.A. Lat Pulldown",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=NJxKFor4hXc",
+      "animation": null
+    },
+    {
+      "id": "trx-row",
+      "name": "TRX ROW",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=wApBVp0vKI0",
+      "animation": null
+    },
+    {
+      "id": "cable-row-wide-bar",
+      "name": "Cable Row-Wide Bar",
+      "category": "Pull",
+      "demoUrl": "https://www.youtube.com/watch?v=iitCIXBgDCE",
+      "animation": null
+    },
+    {
+      "id": "overhead-press-barbell-ohp",
+      "name": "Overhead Press (Barbell OHP)",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=F3QY5vMz_6I",
+      "animation": "overhead"
+    },
+    {
+      "id": "seated-dumbbell-shoulder-press",
+      "name": "Seated Dumbbell Shoulder Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=_RlRDWO2jfg",
+      "animation": null
+    },
+    {
+      "id": "arnold-press",
+      "name": "Arnold Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=6Z15_WdXmVw",
+      "animation": null
+    },
+    {
+      "id": "push-press",
+      "name": "Push Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=-5MmFTKLC-0",
+      "animation": null
+    },
+    {
+      "id": "standing-landmine-press",
+      "name": "Standing Landmine Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=wmiDVlxCae4",
+      "animation": null
+    },
+    {
+      "id": "seated-military-press",
+      "name": "Seated Military Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=3ml7BH7mNwQ",
+      "animation": null
+    },
+    {
+      "id": "pike-push-up",
+      "name": "Pike Push-Up",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=3r3tvRF1tVA",
+      "animation": null
+    },
+    {
+      "id": "machine-shoulder-press",
+      "name": "Machine Shoulder Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=fFyrgCWTIaI",
+      "animation": null
+    },
+    {
+      "id": "handstand-push-up",
+      "name": "Handstand Push-Up",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=PDKmh0OJ6Ic",
+      "animation": null
+    },
+    {
+      "id": "z-press",
+      "name": "Z-Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=MaCwCxWoZ8Y",
+      "animation": null
+    },
+    {
+      "id": "behind-the-neck-press",
+      "name": "Behind-the-Neck Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=wmiDVlxCae4",
+      "animation": null
+    },
+    {
+      "id": "dumbbell-lateral-raise",
+      "name": "Dumbbell Lateral Raise",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=nnH63icHYXY",
+      "animation": "lateral"
+    },
+    {
+      "id": "barbell-push-jerk",
+      "name": "Barbell Push Jerk",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=-5MmFTKLC-0",
+      "animation": null
+    },
+    {
+      "id": "half-kneeling-landmine-press",
+      "name": "Half-Kneeling Landmine Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=9WM4O96Jf7I",
+      "animation": null
+    },
+    {
+      "id": "single-arm-dumbbell-ohp",
+      "name": "Single-Arm Dumbbell OHP",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=pgrWjBfaFe8",
+      "animation": null
+    },
+    {
+      "id": "cable-lateral-raise",
+      "name": "Cable Lateral Raise",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=zpbm-xRHB6k",
+      "animation": null
+    },
+    {
+      "id": "overhead-dumbbell-triceps-press",
+      "name": "Overhead Dumbbell Triceps Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=57fWTQID-1Y",
+      "animation": null
+    },
+    {
+      "id": "bradford-press",
+      "name": "Bradford Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=F3QY5vMz_6I",
+      "animation": null
+    },
+    {
+      "id": "db-front-raise",
+      "name": "DB Front Raise",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=geenhiHju-o",
+      "animation": null
+    },
+    {
+      "id": "kb-goblet-press",
+      "name": "KB Goblet Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=66x0qQiJ-MA",
+      "animation": null
+    },
+    {
+      "id": "kb-shoulder-press",
+      "name": "KB Shoulder Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=DG-NcMnfZ_0",
+      "animation": null
+    },
+    {
+      "id": "kb-rotating-press",
+      "name": "KB Rotating Press",
+      "category": "Overhead push",
+      "demoUrl": "https://www.youtube.com/watch?v=ris9tKqMwgU",
+      "animation": null
+    },
+    {
+      "id": "hanging-leg-raise",
+      "name": "Hanging Leg Raise",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=Pr1ieGZ5atk",
+      "animation": "hanging-raise"
+    },
+    {
+      "id": "forearm-plank",
+      "name": "Forearm Plank",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=3QZlgJ40LfU",
+      "animation": null
+    },
+    {
+      "id": "cable-woodchopper",
+      "name": "Cable Woodchopper",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=he4IhLc1d5k",
+      "animation": "woodchop"
+    },
+    {
+      "id": "ab-wheel-rollout",
+      "name": "Ab Wheel Rollout",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=j6lR4u193gE",
+      "animation": null
+    },
+    {
+      "id": "russian-twist",
+      "name": "Russian Twist",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=rbOJSK07AGA",
+      "animation": null
+    },
+    {
+      "id": "dead-bug",
+      "name": "Dead Bug",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=-gRN_JyVTLY",
+      "animation": null
+    },
+    {
+      "id": "pallof-press",
+      "name": "Pallof Press",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=_2xWmYNnFS8",
+      "animation": "pallof"
+    },
+    {
+      "id": "captain-s-chair-knee-raise",
+      "name": "Captain's Chair Knee Raise",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=fLbZrF6MZuE",
+      "animation": null
+    },
+    {
+      "id": "dragon-flag",
+      "name": "Dragon Flag",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=3FuwY3Z4ux8",
+      "animation": null
+    },
+    {
+      "id": "cable-crunch",
+      "name": "Cable Crunch",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=GwxbI7hnnwI",
+      "animation": null
+    },
+    {
+      "id": "hanging-knee-raise",
+      "name": "Hanging Knee Raise",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=EYe6dc_i4L0",
+      "animation": null
+    },
+    {
+      "id": "hollow-body-hold",
+      "name": "Hollow Body Hold",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=gHGLwQGvtxg",
+      "animation": null
+    },
+    {
+      "id": "side-plank",
+      "name": "Side Plank",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=grUeLYkz-DU",
+      "animation": null
+    },
+    {
+      "id": "toes-to-bar",
+      "name": "Toes-to-Bar",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=hdng3Nm1x_E",
+      "animation": null
+    },
+    {
+      "id": "windshield-wipers",
+      "name": "Windshield Wipers",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=cWAW66f-Vek",
+      "animation": null
+    },
+    {
+      "id": "bird-dog",
+      "name": "Bird Dog",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=psOZS-sVDww",
+      "animation": "bird-dog"
+    },
+    {
+      "id": "l-sit",
+      "name": "L-Sit",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=eywCpp0p7lg",
+      "animation": null
+    },
+    {
+      "id": "decline-bench-crunch",
+      "name": "Decline Bench Crunch",
+      "category": "Core",
+      "demoUrl": "https://www.youtube.com/watch?v=7eCm3WQgzmI",
+      "animation": null
+    }
+  ],
+  "weeks": [
+    {
+      "id": "week-0",
+      "name": "Week 0",
+      "startDate": "2026-10-12",
+      "focus": "Muscle Building (Hypertrophy)",
+      "completed": false,
+      "days": [
+        {
+          "id": "day-1",
+          "name": "Lower-Squat / Quads",
+          "exercises": [
+            {
+              "id": "week-0-row-7",
+              "exerciseId": "cossack-squat",
+              "type": "Warm-Up",
+              "sets": 2,
+              "reps": "10-12",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B7"
+            },
+            {
+              "id": "week-0-row-8",
+              "exerciseId": "barbell-back-squat",
+              "type": "Primary",
+              "sets": 4,
+              "reps": "6\u20138",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B8"
+            },
+            {
+              "id": "week-0-row-9",
+              "exerciseId": "leg-press",
+              "type": "Secondary",
+              "sets": 3,
+              "reps": "10\u201312",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B9"
+            },
+            {
+              "id": "week-0-row-10",
+              "exerciseId": "bulgarian-split-squat",
+              "type": "Accessory",
+              "sets": 3,
+              "reps": "10\u201312",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B10"
+            },
+            {
+              "id": "week-0-row-11",
+              "exerciseId": "quad-extensions",
+              "type": "Isolation",
+              "sets": 3,
+              "reps": "12\u201315",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B11"
+            },
+            {
+              "id": "week-0-row-12",
+              "exerciseId": "walking-lunge",
+              "type": "Accessory",
+              "sets": 3,
+              "reps": "12",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B12"
+            },
+            {
+              "id": "week-0-row-13",
+              "exerciseId": "hanging-leg-raise",
+              "type": "Core",
+              "sets": 3,
+              "reps": "12\u201315",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B13"
+            }
+          ]
+        },
+        {
+          "id": "day-2",
+          "name": "Upper-Push",
+          "exercises": [
+            {
+              "id": "week-0-row-17",
+              "exerciseId": "standard-push-up",
+              "type": "Warm-Up",
+              "sets": 2,
+              "reps": "8",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B17"
+            },
+            {
+              "id": "week-0-row-18",
+              "exerciseId": "barbell-bench-press",
+              "type": "Primary",
+              "sets": 4,
+              "reps": "6\u20138",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B18"
+            },
+            {
+              "id": "week-0-row-19",
+              "exerciseId": "incline-dumbbell-press",
+              "type": "Secondary",
+              "sets": 3,
+              "reps": "8\u201310",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B19"
+            },
+            {
+              "id": "week-0-row-20",
+              "exerciseId": "overhead-press-barbell-ohp",
+              "type": "Accessory",
+              "sets": 3,
+              "reps": "8\u201310",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B20"
+            },
+            {
+              "id": "week-0-row-21",
+              "exerciseId": "chest-dips",
+              "type": "Accessory",
+              "sets": 3,
+              "reps": "10\u201312",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B21"
+            },
+            {
+              "id": "week-0-row-22",
+              "exerciseId": "dumbbell-lateral-raise",
+              "type": "Isolation",
+              "sets": 4,
+              "reps": "12\u201315",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B22"
+            },
+            {
+              "id": "week-0-row-23",
+              "exerciseId": "cable-tricep-extension",
+              "type": "Isolation",
+              "sets": 3,
+              "reps": "12\u201315",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B23"
+            },
+            {
+              "id": "week-0-row-24",
+              "exerciseId": "cable-woodchopper",
+              "type": "Core",
+              "sets": 3,
+              "reps": "12",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B24"
+            }
+          ]
+        },
+        {
+          "id": "day-3",
+          "name": "Lower-Hinge / Glutes",
+          "exercises": [
+            {
+              "id": "week-0-row-28",
+              "exerciseId": "bird-dog",
+              "type": "Warm-Up",
+              "sets": 2,
+              "reps": "10-12",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B28"
+            },
+            {
+              "id": "week-0-row-29",
+              "exerciseId": "conventional-deadlift",
+              "type": "Primary",
+              "sets": 5,
+              "reps": "5\u20136",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B29"
+            },
+            {
+              "id": "week-0-row-30",
+              "exerciseId": "machine-hip-thrust",
+              "type": "Secondary",
+              "sets": 3,
+              "reps": "8\u201310",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B30"
+            },
+            {
+              "id": "week-0-row-31",
+              "exerciseId": "romanian-deadlift-rdl",
+              "type": "Accessory",
+              "sets": 3,
+              "reps": "8\u201310",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B31"
+            },
+            {
+              "id": "week-0-row-32",
+              "exerciseId": "seated-leg-curl",
+              "type": "Isolation",
+              "sets": 3,
+              "reps": "12\u201315",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B32"
+            },
+            {
+              "id": "week-0-row-33",
+              "exerciseId": "bulgarian-split-squat",
+              "type": "Accessory",
+              "sets": 3,
+              "reps": "10",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B33"
+            },
+            {
+              "id": "week-0-row-34",
+              "exerciseId": "back-extension-hyperextension",
+              "type": "Isolation",
+              "sets": 3,
+              "reps": "12\u201315",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B34"
+            }
+          ]
+        },
+        {
+          "id": "day-4",
+          "name": "Upper-Pull",
+          "exercises": [
+            {
+              "id": "week-0-row-38",
+              "exerciseId": "inverted-row",
+              "type": "Warm-Up",
+              "sets": 2,
+              "reps": "10-12",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B38"
+            },
+            {
+              "id": "week-0-row-39",
+              "exerciseId": "barbell-bent-over-row",
+              "type": "Primary",
+              "sets": 4,
+              "reps": "6\u20138",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B39"
+            },
+            {
+              "id": "week-0-row-40",
+              "exerciseId": "pull-up",
+              "type": "Secondary",
+              "sets": 4,
+              "reps": "6\u20138",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B40"
+            },
+            {
+              "id": "week-0-row-41",
+              "exerciseId": "seated-cable-row",
+              "type": "Accessory",
+              "sets": 3,
+              "reps": "10\u201312",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B41"
+            },
+            {
+              "id": "week-0-row-42",
+              "exerciseId": "lat-pulldown",
+              "type": "Accessory",
+              "sets": 3,
+              "reps": "10\u201312",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B42"
+            },
+            {
+              "id": "week-0-row-43",
+              "exerciseId": "face-pull",
+              "type": "Accessory",
+              "sets": 4,
+              "reps": "15",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B43"
+            },
+            {
+              "id": "week-0-row-44",
+              "exerciseId": "straight-arm-cable-pulldown",
+              "type": "Isolation",
+              "sets": 3,
+              "reps": "12\u201315",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B44"
+            },
+            {
+              "id": "week-0-row-45",
+              "exerciseId": "pallof-press",
+              "type": "Core",
+              "sets": 3,
+              "reps": "12",
+              "load": "",
+              "notes": "",
+              "superset": null,
+              "sourceCell": "Week 0!B45"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions": [],
+  "strengthTests": [],
+  "progression": [
+    {
+      "category": "Upper Body - Compound",
+      "examples": "Bench Press, OHP, Rows",
+      "conservative": 5,
+      "standard": 5
+    },
+    {
+      "category": "Upper Body - Isolation",
+      "examples": "Lateral Raises, Curls, Tricep Ext.",
+      "conservative": 5,
+      "standard": 2.5
+    },
+    {
+      "category": "Lower Body - Compound",
+      "examples": "Squat, Sumo Deadlift, RDL",
+      "conservative": 10,
+      "standard": 10
+    },
+    {
+      "category": "Lower Body - Isolation",
+      "examples": "Leg Curls, Extensions, Calves",
+      "conservative": 5,
+      "standard": 5
+    },
+    {
+      "category": "Lower Body - Heavy Machine",
+      "examples": "Leg Press, Sled Push / Drag",
+      "conservative": 20,
+      "standard": 20
+    }
+  ]
+}
