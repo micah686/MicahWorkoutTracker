@@ -7,24 +7,47 @@ function sqlite() {
   return {
     native,
     adapter: {
-      exec: ({ sql, bind }: { sql: string; bind: unknown[] }) =>
-        bind.length
+      exec: ({ sql, bind }: { sql: string; bind?: unknown[] }) =>
+        bind?.length
           ? native.prepare(sql).run(...(bind as any[]))
           : native.exec(sql),
-      selectValue: (sql: string, bind: unknown[]) => {
+      selectValue: (sql: string, bind?: unknown[]) => {
         const stmt = native.prepare(sql);
         stmt.setReturnArrays(true);
-        return (stmt.get(...(bind as any[])) as unknown[] | undefined)?.[0];
+        return (stmt.get(...((bind || []) as any[])) as unknown[] | undefined)?.[0];
       },
-      selectArrays: (sql: string, bind: unknown[]) => {
+      selectArrays: (sql: string, bind?: unknown[]) => {
         const stmt = native.prepare(sql);
         stmt.setReturnArrays(true);
-        return stmt.all(...(bind as any[])) as unknown[][];
+        return stmt.all(...((bind || []) as any[])) as unknown[][];
       },
     },
   };
 }
 describe("SQLite transactions and recovery", () => {
+  it("omits empty bindings for statements without placeholders", () => {
+    const { native, adapter } = sqlite();
+    const guarded = {
+      exec: (options: { sql: string; bind?: unknown[] }) => {
+        expect(options.bind).not.toEqual([]);
+        return adapter.exec(options);
+      },
+      selectValue: (sql: string, bind?: unknown[]) => {
+        expect(bind).not.toEqual([]);
+        return adapter.selectValue(sql, bind);
+      },
+      selectArrays: (sql: string, bind?: unknown[]) => {
+        expect(bind).not.toEqual([]);
+        return adapter.selectArrays(sql, bind);
+      },
+    };
+    const store = createJournalStore(guarded);
+    const data = freshDataset();
+    store.save(data);
+    expect(store.load()).toEqual(data);
+    native.close();
+  });
+
   it("round trips real relational records and set results across store reopen", () => {
     const { native, adapter } = sqlite();
     const store = createJournalStore(adapter);

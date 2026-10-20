@@ -1,16 +1,16 @@
 import { datasetSchema } from "./model";
 import type { Dataset } from "./model";
 export interface SqliteDatabase {
-  exec(options: { sql: string; bind: unknown[] }): unknown;
-  selectValue(sql: string, bind: unknown[]): unknown;
-  selectArrays(sql: string, bind: unknown[]): unknown[][];
+  exec(options: { sql: string; bind?: unknown[] }): unknown;
+  selectValue(sql: string, bind?: unknown[]): unknown;
+  selectArrays(sql: string, bind?: unknown[]): unknown[][];
 }
 export function createJournalStore(db: SqliteDatabase) {
   function row(sql: string, bind: unknown[] = []) {
-    return db.selectValue(sql, bind);
+    return bind.length ? db.selectValue(sql, bind) : db.selectValue(sql);
   }
   function exec(sql: string, bind: unknown[] = []) {
-    db.exec({ sql, bind });
+    db.exec(bind.length ? { sql, bind } : { sql });
   }
   function transaction(fn: () => void) {
     exec("BEGIN IMMEDIATE");
@@ -101,7 +101,10 @@ export function createJournalStore(db: SqliteDatabase) {
     });
   }
   function rows(sql: string, bind: unknown[] = []): any[] {
-    return db.selectArrays(sql, bind).map((r: any[]) => JSON.parse(r[0]));
+    const result = bind.length
+      ? db.selectArrays(sql, bind)
+      : db.selectArrays(sql);
+    return result.map((r: any[]) => JSON.parse(r[0]));
   }
   function load(): Dataset | null {
     const meta = row("SELECT payload FROM metadata WHERE id=1");
