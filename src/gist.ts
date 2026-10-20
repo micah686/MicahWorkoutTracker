@@ -10,6 +10,15 @@ export type Connection = {
   url: string;
 };
 
+export type GistOption = {
+  id: string;
+  url: string;
+  description: string;
+  updatedAt: string;
+  filename: string;
+  hasBackup: boolean;
+};
+
 const key =
   "gymtracker:" + new URL(".", location.href).pathname + ":connection";
 const cookieName = "gymtracker_remember";
@@ -60,6 +69,44 @@ export async function connectGitHub(token: string) {
   }
 }
 
+export async function listSecretGists(): Promise<GistOption[]> {
+  const gists: Gist[] = [];
+  for (let page = 1; page <= 10; page++) {
+    const response = await api(`https://api.github.com/gists?per_page=100&page=${page}`);
+    const batch = (await response.json()) as (Gist & {
+      description?: string;
+      updated_at?: string;
+    })[];
+    gists.push(...batch.filter((gist) => !gist.public));
+    if (batch.length < 100) break;
+  }
+  return gists.map((gist) => {
+    const files = Object.values(gist.files);
+    const backupFile = gist.files[fileName] || files.find((file) => file.filename.endsWith(".json"));
+    return {
+      id: gist.id,
+      url: gist.html_url,
+      description: gist.description?.trim() || "Untitled secret gist",
+      updatedAt: (gist as Gist & { updated_at?: string }).updated_at || "",
+      filename: backupFile?.filename || files[0]?.filename || "No files",
+      hasBackup: Boolean(backupFile),
+    };
+  });
+}
+
+export async function selectGist(id: string): Promise<Connection> {
+  const gist = (await (await api(`https://api.github.com/gists/${encodeURIComponent(id)}`)).json()) as Gist;
+  if (gist.public) throw Error("This gist is public. Choose a secret gist to protect your workout data.");
+  return {
+    gistId: gist.id,
+    gistUrl: gist.html_url,
+    remoteVersion: version(gist),
+    lastSync: "",
+    syncedRevision: "",
+    url: "",
+  };
+}
+
 export function connected() {
   return Boolean(accessToken);
 }
@@ -103,6 +150,8 @@ type Gist = {
   id: string;
   html_url: string;
   public: boolean;
+  description?: string;
+  updated_at?: string;
   history?: { version: string }[];
   files: Record<
     string,

@@ -20,6 +20,7 @@ import {
   LockKeyhole,
   Smartphone,
   Plus,
+  RefreshCw,
   Search,
   Settings2,
   ShieldCheck,
@@ -58,13 +59,16 @@ import {
   disconnectGitHub,
   downloadGist,
   fetchGistUrl,
+  listSecretGists,
   GistConflict,
   readConnection,
   remembered,
+  selectGist,
   storeConnection,
   uploadGist,
 } from "./gist";
 import type { Connection } from "./gist";
+import type { GistOption } from "./gist";
 
 type View = "workout" | "history" | "library" | "strength" | "sync";
 type InstallPromptEvent = Event & {
@@ -182,6 +186,7 @@ export default function App() {
   const [isConnected, setIsConnected] = useState(false);
   const [conflict, setConflict] = useState(false);
   const [githubToken, setGithubToken] = useState("");
+  const [availableGists, setAvailableGists] = useState<GistOption[]>([]);
   const [installAvailable, setInstallAvailable] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
   const installPrompt = useRef<InstallPromptEvent | null>(null);
@@ -998,6 +1003,7 @@ export default function App() {
                       onClick={() =>
                         run(async () => {
                           await connectGitHub(githubToken);
+                          setAvailableGists(await listSecretGists());
                           setGithubToken("");
                           setMessage("GitHub is connected for this session.");
                         })
@@ -1031,6 +1037,41 @@ export default function App() {
                         "Created on your first upload"
                       )}
                     </small>
+                    {isConnected && (
+                      <>
+                        <label>
+                          Choose a secret gist
+                          <select
+                            value={connection.gistId}
+                            disabled={busy || availableGists.length === 0}
+                            onChange={(e) => {
+                              const id = e.target.value;
+                              if (!id) return;
+                              void run(async () => {
+                                const selected = await selectGist(id);
+                                updateConnection({ ...selected, url: connection.url });
+                                setConflict(false);
+                                setMessage("Gist selected as this journal’s backup destination.");
+                              });
+                            }}
+                          >
+                            <option value="">{availableGists.length ? "Select a gist…" : "No secret gists found"}</option>
+                            {availableGists.map((gist) => (
+                              <option key={gist.id} value={gist.id}>
+                                {gist.description} · {gist.filename}{gist.hasBackup ? "" : " · no JSON"}
+                              </option>
+                            ))}
+                          </select>
+                        </label>
+                        <button
+                          className="text-button"
+                          disabled={busy || offline}
+                          onClick={() => run(async () => setAvailableGists(await listSecretGists()))}
+                        >
+                          <RefreshCw size={14} /> Refresh gist list
+                        </button>
+                      </>
+                    )}
                     <div className="inline-buttons">
                       <button
                         disabled={busy}
