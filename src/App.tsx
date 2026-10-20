@@ -18,6 +18,7 @@ import {
   Library,
   LoaderCircle,
   LockKeyhole,
+  Smartphone,
   Plus,
   Search,
   Settings2,
@@ -66,6 +67,10 @@ import {
 import type { Connection } from "./gist";
 
 type View = "workout" | "history" | "library" | "strength" | "sync";
+type InstallPromptEvent = Event & {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
+};
 const views: { id: View; label: string; icon: typeof Dumbbell }[] = [
   { id: "workout", label: "My workout", icon: Dumbbell },
   { id: "history", label: "History", icon: HistoryIcon },
@@ -177,6 +182,9 @@ export default function App() {
   const [isConnected, setIsConnected] = useState(false);
   const [conflict, setConflict] = useState(false);
   const [githubToken, setGithubToken] = useState("");
+  const [installAvailable, setInstallAvailable] = useState(false);
+  const [isInstalled, setIsInstalled] = useState(false);
+  const installPrompt = useRef<InstallPromptEvent | null>(null);
   useEffect(() => {
     openDatabase()
       .then((r) => {
@@ -187,13 +195,31 @@ export default function App() {
       .catch((e) => setStartupError(errorText(e)));
     const hash = () => setView(navView());
     const online = () => setOffline(!navigator.onLine);
+    setIsInstalled(
+      window.matchMedia("(display-mode: standalone)").matches ||
+        (navigator as Navigator & { standalone?: boolean }).standalone === true,
+    );
+    const beforeInstall = (event: Event) => {
+      event.preventDefault();
+      installPrompt.current = event as InstallPromptEvent;
+      setInstallAvailable(true);
+    };
+    const installed = () => {
+      installPrompt.current = null;
+      setInstallAvailable(false);
+      setIsInstalled(true);
+    };
     addEventListener("hashchange", hash);
     addEventListener("online", online);
     addEventListener("offline", online);
+    addEventListener("beforeinstallprompt", beforeInstall);
+    addEventListener("appinstalled", installed);
     return () => {
       removeEventListener("hashchange", hash);
       removeEventListener("online", online);
       removeEventListener("offline", online);
+      removeEventListener("beforeinstallprompt", beforeInstall);
+      removeEventListener("appinstalled", installed);
     };
   }, []);
   useEffect(() => {
@@ -1140,6 +1166,34 @@ export default function App() {
                     Editor and Reader are viewing modes, not account
                     permissions. Sharing a JSON file shares everything in it.
                   </p>
+                </Panel>
+                <Panel className="install-panel">
+                  <Smartphone size={26} />
+                  <h2>{isInstalled ? "Installed on this device" : "Install the app"}</h2>
+                  <p>
+                    Add Form &amp; Field to your home screen or desktop for a focused window and quick access to your journal.
+                  </p>
+                  {installAvailable && (
+                    <button
+                      className="button secondary"
+                      onClick={async () => {
+                        const prompt = installPrompt.current;
+                        if (!prompt) return;
+                        await prompt.prompt();
+                        const choice = await prompt.userChoice;
+                        installPrompt.current = null;
+                        setInstallAvailable(false);
+                        if (choice.outcome === "accepted") setIsInstalled(true);
+                      }}
+                    >
+                      Install Form &amp; Field
+                    </button>
+                  )}
+                  {!installAvailable && !isInstalled && (
+                    <p className="muted small">
+                      On iPhone or iPad, tap Share, then Add to Home Screen. On Android or desktop, use your browser’s Install app or Add to Home Screen menu.
+                    </p>
+                  )}
                 </Panel>
               </div>
             </>

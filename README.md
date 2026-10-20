@@ -19,7 +19,11 @@ npm run build
 npm run preview
 ```
 
-The build writes only deployable public assets to `dist/`, generates the offline service worker, and checks the artifact for private workbook content. A committed dependency lock pins the toolchain. The application uses hash navigation, so GitHub Pages needs no server-side route fallback.
+The build writes only deployable public assets to `dist/`, generates the offline service worker, and checks the artifact for private workbook content and PWA install assets. A committed dependency lock pins the toolchain. The application uses hash navigation, so GitHub Pages needs no server-side route fallback.
+
+## Install as an app
+
+The HTTPS GitHub Pages site is installable on supported browsers. In Chrome, Edge, and Android browsers, open **Data & sync → Install the app** when the install button is available, or use the browser’s install menu. On iPhone or iPad, use **Share → Add to Home Screen** in Safari. The app opens in its own window when supported and keeps the same offline cache; visit the site online once before relying on it offline. The manifest and icons use relative paths so installation works from the repository’s GitHub Pages subpath.
 
 ## Restore your existing worksheet results
 

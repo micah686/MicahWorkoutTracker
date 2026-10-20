@@ -40,4 +40,35 @@ async function scan(dir) {
 await scan("dist");
 if (!wasmFiles)
   throw Error("SQLite WASM is missing from the deployment artifact.");
-console.log("Deploy artifact privacy and WASM checks passed.");
+const manifest = JSON.parse(
+  await readFile("dist/manifest.webmanifest", "utf8"),
+);
+if (
+  !manifest.name ||
+  !manifest.start_url ||
+  !manifest.scope ||
+  manifest.display !== "standalone"
+)
+  throw Error("PWA manifest is missing install metadata.");
+for (const size of [192, 512]) {
+  const icon = manifest.icons?.find((item) =>
+    item.sizes?.split(/\s+/).includes(`${size}x${size}`),
+  );
+  if (!icon) throw Error(`PWA manifest is missing a ${size}px icon.`);
+  const path = `dist/${icon.src.replace(/^\.\//, "")}`;
+  const png = await readFile(path);
+  if (
+    png.toString("hex", 0, 8) !== "89504e470d0a1a0a" ||
+    png.readUInt32BE(16) !== size ||
+    png.readUInt32BE(20) !== size
+  )
+    throw Error(`Invalid ${size}px PWA icon: ${path}`);
+}
+const appleIcon = await readFile("dist/icons/apple-touch-icon.png");
+if (
+  appleIcon.toString("hex", 0, 8) !== "89504e470d0a1a0a" ||
+  appleIcon.readUInt32BE(16) !== 180 ||
+  appleIcon.readUInt32BE(20) !== 180
+)
+  throw Error("Invalid Apple touch icon.");
+console.log("Deploy artifact privacy, WASM, and PWA checks passed.");
