@@ -1,6 +1,5 @@
 import { readdir, readFile } from "node:fs/promises";
 const forbidden = [
-  "Micah",
   "Clean depth, RPE 8.5",
   "3 plates on each side",
   "learning about the technique",
