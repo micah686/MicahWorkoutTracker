@@ -1372,15 +1372,15 @@ main#main-content {
 .disabled {
   opacity: 0.5;
 }
-.drive-panel {
+.gist-panel {
   grid-row: span 2;
 }
-.drive-title {
+.gist-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.drive-controls {
+.gist-controls {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -1674,10 +1674,10 @@ main#main-content {
   .sync-grid {
     grid-template-columns: 1fr;
   }
-  .drive-panel {
+  .gist-panel {
     grid-row: auto;
   }
-  .drive-panel {
+  .gist-panel {
     grid-row: 2;
   }
   .desktop-sync {
@@ -2137,10 +2137,10 @@ main#main-content {
     min-height: 44px;
     font-size: 11px;
   }
-  .drive-buttons {
+  .gist-buttons {
     gap: 9px;
   }
-  .drive-buttons .button {
+  .gist-buttons .button {
     flex: 1;
   }
   .notice {

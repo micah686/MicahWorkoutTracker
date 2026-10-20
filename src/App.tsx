@@ -22,6 +22,7 @@ import {
   Search,
   Settings2,
   ShieldCheck,
+  Github,
   Sprout,
   TrendingUp,
   WifiOff,
@@ -52,20 +53,17 @@ import { openDatabase, recovery, snapshot, writeDatabase } from "./db";
 import { Movement } from "./components/Movement";
 import {
   connected,
-  connectDrive,
-  disconnectDrive,
-  downloadDrive,
-  DriveConflict,
-  driveConfigured,
-  pickerConfigured,
-  pickDrive,
-  prepareGoogle,
+  connectGitHub,
+  disconnectGitHub,
+  downloadGist,
+  fetchGistUrl,
+  GistConflict,
   readConnection,
   remembered,
   storeConnection,
-  uploadDrive,
-} from "./drive";
-import type { Connection } from "./drive";
+  uploadGist,
+} from "./gist";
+import type { Connection } from "./gist";
 
 type View = "workout" | "history" | "library" | "strength" | "sync";
 const views: { id: View; label: string; icon: typeof Dumbbell }[] = [
@@ -178,6 +176,7 @@ export default function App() {
   const [remember, setRemember] = useState(remembered);
   const [isConnected, setIsConnected] = useState(false);
   const [conflict, setConflict] = useState(false);
+  const [githubToken, setGithubToken] = useState("");
   useEffect(() => {
     openDatabase()
       .then((r) => {
@@ -186,7 +185,6 @@ export default function App() {
         setPersistent(r.persistent);
       })
       .catch((e) => setStartupError(errorText(e)));
-    void prepareGoogle().catch(() => {});
     const hash = () => setView(navView());
     const online = () => setOffline(!navigator.onLine);
     addEventListener("hashchange", hash);
@@ -278,12 +276,12 @@ export default function App() {
     await run(async () => {
       try {
         const data = await snapshot();
-        const c = await uploadDrive(data, connection, force);
+        const c = await uploadGist(data, connection, force);
         updateConnection(c);
         setConflict(false);
-        setMessage("Your SQLite data has been backed up to Google Drive.");
+        setMessage("Your SQLite data has been backed up to a secret GitHub Gist.");
       } catch (e) {
-        if (e instanceof DriveConflict) setConflict(true);
+        if (e instanceof GistConflict) setConflict(true);
         else throw e;
       }
     });
@@ -901,7 +899,11 @@ export default function App() {
                       e.preventDefault();
                       void run(async () =>
                         setPreview({
-                          data: await fetchDataset(connection.url),
+                          data:
+                            new URL(connection.url).hostname === "gist.github.com" ||
+                            new URL(connection.url).hostname === "gist.githubusercontent.com"
+                              ? await fetchGistUrl(connection.url)
+                              : await fetchDataset(connection.url),
                           label: new URL(connection.url).hostname,
                         }),
                       );
@@ -931,52 +933,57 @@ export default function App() {
                     </button>
                   </form>
                   <p className="muted small">
-                    For private Drive files, use the Google Drive panel.
+                    Secret Gist links work here too. Anyone with the link can view one.
                   </p>
                 </Panel>
-                <Panel className="drive-panel">
-                  <div className="drive-title">
+                <Panel className="gist-panel">
+                  <div className="gist-title">
                     <span className="icon-tile">
-                      <Cloud size={23} />
+                      <Github size={23} />
                     </span>
                     <span className="completion-badge">
                       {isConnected ? "Connected" : "Not connected"}
                     </span>
                   </div>
-                  <h2>Your Google Drive backup</h2>
+                  <h2>Your secret GitHub Gist</h2>
                   <p>
-                    Save your journal to a JSON file in your own Drive. Future
-                    uploads overwrite the same file.
+                    Save your journal as an unlisted JSON gist on your GitHub account.
+                    Keep the link private and share it only with people you trust.
                   </p>
-                  {!driveConfigured && (
-                    <div className="inline-note">
-                      Deployment setup needed: add your Google OAuth client ID
-                      to enable Drive. See README.md.
-                    </div>
-                  )}
-                  <div className="drive-controls">
+                  <label>
+                    Fine-grained GitHub token
+                    <input
+                      type="password"
+                      autoComplete="off"
+                      spellCheck={false}
+                      placeholder="github_pat_…"
+                      value={githubToken}
+                      onChange={(e) => setGithubToken(e.target.value)}
+                    />
+                  </label>
+                  <p className="muted small">
+                    Create a token with only <strong>Gists: read and write</strong> access. The token stays in memory and is cleared when you reload or disconnect.
+                    <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noreferrer"> Create token <ArrowUpRight size={13} /></a>
+                  </p>
+                  <div className="gist-controls">
                     <button
                       className="button primary"
-                      disabled={busy || offline || !driveConfigured}
+                      disabled={busy || offline || !githubToken.trim()}
                       onClick={() =>
                         run(async () => {
-                          await connectDrive();
-                          setMessage(
-                            "Google Drive connected for this session.",
-                          );
+                          await connectGitHub(githubToken);
+                          setGithubToken("");
+                          setMessage("GitHub is connected for this session.");
                         })
                       }
                     >
-                      {isConnected
-                        ? "Reconnect Google Drive"
-                        : "Connect Google Drive"}{" "}
-                      <ArrowUpRight size={16} />
+                      <Github size={16} /> {isConnected ? "Reconnect GitHub" : "Connect GitHub"}
                     </button>
                     {isConnected && (
                       <button
                         className="text-button"
                         onClick={() => {
-                          disconnectDrive();
+                          disconnectGitHub();
                           setIsConnected(false);
                         }}
                       >
@@ -987,55 +994,38 @@ export default function App() {
                   <div className="destination">
                     <span className="eyebrow">BACKUP DESTINATION</span>
                     <strong>
-                      {connection.fileId
-                        ? connection.fileName
-                        : "New backup file"}
+                      {connection.gistId ? "Secret GitHub Gist" : "New secret gist"}
                     </strong>
                     <small>
-                      {connection.fileId || "Created on your first upload"}
+                      {connection.gistUrl ? (
+                        <a href={connection.gistUrl} target="_blank" rel="noreferrer">
+                          Open or share gist <ArrowUpRight size={12} />
+                        </a>
+                      ) : (
+                        "Created on your first upload"
+                      )}
                     </small>
                     <div className="inline-buttons">
-                      <button
-                        disabled={
-                          busy || offline || !isConnected || !pickerConfigured
-                        }
-                        className="text-button"
-                        onClick={() =>
-                          run(async () => {
-                            const file = await pickDrive();
-                            updateConnection({
-                              ...connection,
-                              fileId: file.id,
-                              fileName: file.name,
-                              remoteVersion: "",
-                              syncedRevision: "",
-                              lastSync: "",
-                            });
-                          })
-                        }
-                      >
-                        Choose existing file
-                      </button>
                       <button
                         disabled={busy}
                         className="text-button"
                         onClick={() => {
                           updateConnection({
                             ...connection,
-                            fileId: "",
+                            gistId: "",
+                            gistUrl: "",
                             remoteVersion: "",
                             syncedRevision: "",
                             lastSync: "",
-                            fileName: "gymtracker-backup.json",
                           });
                           setConflict(false);
                         }}
                       >
-                        Use a new file
+                        Create a new gist
                       </button>
                     </div>
                   </div>
-                  <div className="inline-buttons drive-buttons">
+                  <div className="inline-buttons gist-buttons">
                     <button
                       className="button primary"
                       disabled={
@@ -1047,19 +1037,19 @@ export default function App() {
                       }
                       onClick={() => upload()}
                     >
-                      <CloudUpload size={16} /> Upload to Drive
+                      <CloudUpload size={16} /> {connection.gistId ? "Update gist" : "Create secret gist"}
                     </button>
                     <button
                       className="button secondary"
                       disabled={
-                        busy || offline || !isConnected || !connection.fileId
+                        busy || offline || !isConnected || !connection.gistId
                       }
                       onClick={() =>
                         run(async () => {
-                          const r = await downloadDrive(connection);
+                          const r = await downloadGist(connection);
                           setPreview({
                             data: r.data,
-                            label: r.connection.fileName,
+                            label: "Secret GitHub Gist",
                             connection: r.connection,
                           });
                         })
@@ -1071,7 +1061,7 @@ export default function App() {
                   {conflict && (
                     <div className="inline-note warning">
                       <p>
-                        The Drive file changed or has not been reviewed here.
+                        The gist changed since your last sync.
                         Download it first, or overwrite it with this device’s
                         journal.
                       </p>
@@ -1081,13 +1071,13 @@ export default function App() {
                         onClick={() => {
                           if (
                             confirm(
-                              "Overwrite the remote Drive backup with this device’s journal? Other-device changes will be replaced.",
+                              "Overwrite the remote gist with this device’s journal? Other-device changes will be replaced.",
                             )
                           )
                             void upload(true);
                         }}
                       >
-                        Overwrite remote file
+                        Overwrite remote gist
                       </button>
                     </div>
                   )}
@@ -1117,9 +1107,7 @@ export default function App() {
                     Remember my destination on this device
                   </label>
                   <p className="muted small">
-                    A cookie remembers this preference. Destination settings
-                    stay on this device; access tokens stay in memory. Google
-                    may ask you to reconnect.
+                    The cookie remembers this preference; the gist link stays in this browser. GitHub tokens are never saved. A secret gist is unlisted, not private: anyone who gets its URL can view it.
                   </p>
                 </Panel>
                 <Panel className="storage-panel">
@@ -1141,7 +1129,7 @@ export default function App() {
                         setMessage(
                           granted
                             ? "Persistent storage granted. Keep exporting backups too."
-                            : "This browser controls storage retention. Keep a JSON or Drive backup.",
+                            : "This browser controls storage retention. Keep a JSON or Gist backup.",
                         );
                       })
                     }

@@ -22,19 +22,19 @@ Turn `current_worksheet.xlsx` into a mobile-first workout journal on GitHub Page
 - Export a device-downloadable JSON file. Local JSON imports and HTTPS URL downloads must validate before an isolated preview. Reader mode may preview and download; replacement requires Editor mode and explicit confirmation.
 - Enforce a 10 MB import limit, valid field ranges, unique IDs, and referential integrity. Keep the previous dataset in a recovery snapshot and replace data in one transaction. Network, CORS, parse, and schema failures must leave local results intact.
 
-## Google Drive and deployment
+## GitHub Gists and deployment
 
-- Use deployment-owned Google OAuth configuration with the limited `drive.file` scope and Google Picker for an existing file. Keep all user data access in the browser; no client secret or backend.
-- Explicit Upload takes a committed SQLite snapshot, converts it to JSON, creates a Drive backup initially, and updates that same file ID thereafter. Download uses an authenticated API request and the common preview/import flow.
-- Compare remote versions before overwriting; require review or explicit overwrite for unseen changes. Use an ETag precondition when Google exposes it. Do not automatically merge devices or promise atomic multi-user collaboration.
-- Remember destination metadata locally and the remember preference in a path-scoped, Secure-on-HTTPS, SameSite=Lax cookie lasting 180 days. Keep tokens in memory; offer Reconnect when Google access expires. Cookies cannot guarantee permanent Google authorization.
-- Deploy only `dist/` with GitHub Actions, repository-aware base paths, and hash navigation. Check built assets for private workbook content. Document OAuth origins, Picker settings, GitHub repository variables, local import, and recovery.
+- Each user connects their own GitHub account with a fine-grained personal access token granting only Gists read/write. No browser OAuth client secret, backend, or build-time credentials are used.
+- Explicit Upload takes a committed SQLite snapshot, converts it to JSON, creates an unlisted secret gist, and updates that same gist later. Public and secret Gist URLs can be downloaded into the common preview/import flow.
+- Compare remote Gist revisions before overwriting; require review or explicit overwrite for unseen changes. Do not automatically merge devices or describe secret gists as private: anyone with the URL can read them.
+- Remember destination metadata locally and the remember preference in a path-scoped, Secure-on-HTTPS, SameSite=Lax cookie lasting 180 days. Keep access tokens in memory only; require token entry after reload. Cookies never contain credentials.
+- Deploy only `dist/` with GitHub Actions, repository-aware base paths, and hash navigation. Check built assets for private workbook content. Document least-privilege token setup, local import, and recovery.
 
 ## Verification
 
 - Conversion tests: exercise/day counts, reviewed rep ranges, aliases, private summaries, and public privacy.
 - Domain tests: JSON round trips, invalid schemas/IDs/URLs, week copying, effort/load labels, and workbook strength formulas.
 - Real SQLite tests: relational round trips, reopen, replacement/recovery, malformed imports, and rollback on failed writes.
-- Mocked Google tests: create/update, remote conflicts, remembered settings without tokens, authorization expiry, and downloads changing during transfer.
+- Mocked Gist tests: secret create/update, conflict handling, rejection of public gists, remembered settings without tokens, authorization expiry, and JSON downloads.
 - Browser acceptance: actual WASM/OPFS persistence after reload, competing tabs, local import/recovery, reader restrictions, offline revisits, and layouts at phone/tablet/laptop sizes. Verify on current iOS Safari, Android Chrome, and desktop browsers before release.
-- Live Drive and public Pages verification require a configured Google project and an actual GitHub deployment.
+- Live Gist authorization and public Pages verification require a fine-grained token and an actual GitHub deployment.
